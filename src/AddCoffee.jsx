@@ -14,6 +14,7 @@ const AddCoffee = () => {
         const price = form.price.value;
         const imageUrl = form.imageUrl.value;
         const allCoffee = {name, type, origin, chef, price, imageUrl};
+        console.log(allCoffee);
 
         fetch('http://localhost:5000/coffee', {
             method: 'POST', 
@@ -22,6 +23,7 @@ const AddCoffee = () => {
         })
         .then(res => res.json())
         .then(data => {
+            console.log(data);
             if (data.insertedId) {
                 Swal.fire({
                     title: 'Success!',

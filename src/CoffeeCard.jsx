@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaEye, FaEdit, FaTrashAlt } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 const CoffeeCard = ({ coffee }) => {
@@ -50,9 +51,12 @@ const CoffeeCard = ({ coffee }) => {
                     <button className="text-blue-500 hover:text-blue-700">
                         <FaEye size={20} />
                     </button>
+                    <Link to={`updateCoffee/${coffee._id}`}>
                     <button className="text-green-500 hover:text-green-700">
                         <FaEdit size={20} />
                     </button>
+                    </Link>
+
                     <button onClick={() => handleDelete(coffee._id)} className="text-red-500 hover:text-red-700">
                         <FaTrashAlt size={20} />
                     </button>
